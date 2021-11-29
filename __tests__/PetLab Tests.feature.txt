@@ -1,0 +1,24 @@
+Feature: PetLab Co Product List Tests
+
+  I want to display a list of PetLab products
+  
+  Scenario: Opening the product catalog
+    When I visit the product catalog
+    Then I see a product list of 11 products
+    And I see a filter list with 3 filter options
+    And I see a text search box
+
+  Scenario: Filtering for products with tag of Dog
+    When I visit the product catalog
+    And I click on Dog filter
+    Then I see a product count of 10
+
+  Scenario: Filtering for products available for subscription
+    When I visit the product catalog
+    And I click on Subscription filter
+    Then I see a product count of 7
+
+  Scenario: Filtering for products with tag of Formula
+    When I visit the product catalog
+    And I click on Formula filter
+    Then I see a product count of 3
